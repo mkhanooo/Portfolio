@@ -1,0 +1,308 @@
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+:root{
+  --neon : #B6FF00 ;
+  --default : #FFbb00 ;
+  --light: rgba(255, 187, 0, 0.8);
+  --color: royalblue
+}
+p {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+}
+form {
+  background: #111;
+  border: 1px solid #191919;
+  border-radius: .4em;
+  bottom: 0;
+  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+  height: 380px;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+}
+
+form:after {
+  background: linear-gradient(to right, #111111, #444444, #b6b6b8, #444444, #2F2F2F, #272727);
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50px;
+  position: absolute;
+  top: 0;
+  width: 150px;
+}
+
+form:before {
+  border-radius: 50%;
+  box-shadow: 0 0 6px 4px #fff;
+  content: "";
+  display: block;
+  height: 5px;
+  left: 34%;
+  position: absolute;
+  top: -7px;
+  width: 8px;
+}
+
+.inset {
+  border-top: 1px solid #19191a;
+  padding: 20px;
+}
+
+form h1 {
+  font-family: 'Audiowide';
+  border-bottom: 1px solid #000;
+  font-size: 18px;
+  padding: 15px 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 0 #000;
+}
+
+form h1 {
+  color: var(--default);
+  font-family: Audiowide;
+  font-weight: normal;
+}
+
+form h1.poweron {
+  color: #ffffff;
+  transition: all 0.5s;
+  animation: flicker 1s ease-in-out 1 alternate, neon 1.5s ease-in-out infinite alternate;
+  animation-delay: 0s, 1s;
+}
+input:focus , textarea:focus{
+  border-bottom: none !important;
+  box-shadow: 0 1px 0 0 var(--default) !important;
+}
+form h1:after {
+  position: absolute;
+  width: 250px;
+  height: 180px;
+  content: "";
+  display: block;
+  pointer-events: none;
+  top: 0;
+  margin-left: 138px;
+  transform-style: flat;
+  transform: skew(20deg);
+  background: -moz-linear-gradient(top, hsla(0,0%,100%,0.1) 0%, hsla(0,0%,100%,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(0,0%,100%,0.2)), color-stop(100%,hsla(0,0%,100%,0)));
+  background: -webkit-linear-gradient(top, hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0) 100%);
+  background: -o-linear-gradient(top, hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0) 100%);
+  background: -ms-linear-gradient(top, hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42ffffff', endColorstr='#00ffffff',GradientType=0 );
+  background: linear-gradient(to bottom, hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0) 100%);
+}
+
+input, textarea {
+  background: linear-gradient(#1f2124,#27292c);
+  border: 1px solid #222;
+  border-radius: .3em !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+  color: #FFF;
+  font-size: 13px;
+  margin-bottom: 20px;
+  padding: 8px 0px;
+  padding-left: 10px !important;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+input:disabled , textarea:disabled {
+	color: #999;
+}
+input::placeholder , textarea::placeholder{
+  font-size: 14px;
+}
+
+
+input:hover:not([disabled]), 
+input:focus, 
+input:hover:not([disabled]), 
+input:focus, 
+label:hover ~ input, 
+label:hover ~ input,
+textarea:hover:not([disabled]), 
+textarea:focus, 
+textarea:hover:not([disabled]), 
+textarea:focus, 
+label:hover ~ textarea, 
+label:hover ~ textarea {
+  background: #27292c;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 
+      0 0 2.5px var(--color),
+      0 0 5px var(--color),
+      0 0 7.5px var(--color),
+      0 0 10px var(--neon),
+      0 0 17.5px var(--neon),
+      0 0 20px var(--neon),
+      0 0 25px var(--neon),
+      0 0 37.5px var(--neon);
+  }
+
+  to {
+    text-shadow: 
+      0 0 3px var(--color),
+      0 0 7px  var(--color),
+      0 0 13px  var(--color),
+      0 0 17px  var(--neon),
+      0 0 33px  var(--neon),
+      0 0 38px  var(--neon),
+      0 0 48px var(--neon),
+      0 0 63px var(--neon);
+      color: var(--color)
+  }
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow: 
+      0 0 2.5px var(--color),
+      0 0 5px var(--color),
+      0 0 7.5px var(--color),
+      0 0 10px var(--neon),
+      0 0 17.5px var(--neon),
+      0 0 20px var(--neon),
+      0 0 25px var(--neon),
+      0 0 37.5px var(--neon);
+  }
+
+  2% {
+    text-shadow: none;
+  }
+
+  8% {
+    text-shadow: 
+    0 0 2.5px var(--color),
+    0 0 5px var(--color),
+    0 0 7.5px var(--color),
+    0 0 10px var(--neon),
+    0 0 17.5px var(--neon),
+    0 0 20px var(--neon),
+    0 0 25px var(--neon),
+    0 0 37.5px var(--neon);
+  }
+
+  10% {
+    text-shadow: none;
+  }
+
+  20% {
+    text-shadow: 
+    0 0 2.5px var(--color),
+    0 0 5px var(--color),
+    0 0 7.5px var(--color),
+    0 0 10px var(--neon),
+    0 0 17.5px var(--neon),
+    0 0 20px var(--neon),
+    0 0 25px var(--neon),
+    0 0 37.5px var(--neon);
+  }
+
+  22% {
+    text-shadow: none;
+  }
+
+  24% {
+    text-shadow: 
+    0 0 2.5px var(--color),
+    0 0 5px var(--color),
+    0 0 7.5px var(--color),
+    0 0 10px var(--neon),
+    0 0 17.5px var(--neon),
+    0 0 20px var(--neon),
+    0 0 25px var(--neon),
+    0 0 37.5px var(--neon);
+  }
+
+  28% {
+    text-shadow: none;
+  }
+
+  32% {
+    text-shadow: 
+    0 0 2.5px var(--color),
+    0 0 5px var(--color),
+    0 0 7.5px var(--color),
+    0 0 10px var(--neon),
+    0 0 17.5px var(--neon),
+    0 0 20px var(--neon),
+    0 0 25px var(--neon),
+    0 0 37.5px var(--neon);
+  }
+
+  34% {
+    text-shadow: none;
+  }
+
+  36% {
+    text-shadow: none;
+  }
+
+  42% {
+    text-shadow: none;
+  }
+
+  100% {
+    text-shadow: 
+    0 0 2.5px var(--color),
+    0 0 5px var(--color),
+    0 0 7.5px var(--color),
+    0 0 10px var(--neon),
+    0 0 17.5px var(--neon),
+    0 0 20px var(--neon),
+    0 0 25px var(--neon),
+    0 0 37.5px var(--neon);
+  }
+}
+
+.btn-btn{
+  padding: 0 !important;
+  border-color: var(--default);
+}
+.btn-btn a , .btn-btn button , .btn-btn div{
+  color: var(--default) !important;
+}
+.btn-btn:hover a , .btn-btn:hover button , .btn-btn:hover div{
+  color: var(--default) !important;
+}
+
+.btn-btn div{
+  padding: 10px 20px;
+}
+
+.btn-btn .mask{
+  background-color: var(--default);
+  background-color: var(--light);
+}
+
+.btn-btn:hover {
+	background-color: rgba(255, 255, 255, 0.051);
+	border-color: var(--default);
+	box-shadow: 0 0 5px var(--light);
+	transition: background 0s;
+}
+
+.btn-btn:hover .mask {
+	background-color: var(--default);
+	transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+}
+.btn-btn:active {
+	background-color: var(--default);
+}
